@@ -15,7 +15,7 @@ public final class Blockies {
 
     // MARK: - Properties
 
-    private var randSeed: [Int]
+    private var randSeed: [UInt32]
 
     public var seed: String
 
@@ -64,31 +64,35 @@ public final class Blockies {
         }
     }
 
-    public func createImage() -> Image? {
+    public func createImage(customScale: Int = 1) -> Image? {
         let imageData = createImageData()
 
-        return image(data: imageData)
+        return image(data: imageData, customScale: customScale)
     }
 
-    private func rand() -> UInt {
+    private func rand() -> Double {
         let t = randSeed[0] ^ (randSeed[0] << 11)
 
         randSeed[0] = randSeed[1]
         randSeed[1] = randSeed[2]
         randSeed[2] = randSeed[3]
-        randSeed[3] = (randSeed[3] ^ (randSeed[3] >> 19) ^ t ^ (t >> 8))
+        let tmp = Int32(bitPattern: randSeed[3])
+        let tmpT = Int32(bitPattern: t)
+        randSeed[3] = UInt32(bitPattern: (tmp ^ (tmp >> 19) ^ tmpT ^ (tmpT >> 8)))
 
         // UInt for zero fill right shift
-        let divisor = (UInt((1 << 31)) >> UInt(0))
-        return (UInt(randSeed[3]) >> UInt(0)) / divisor
+        // let divisor = (UInt32((1 << 31)) >> UInt32(0))
+        let divisor = Int32.max
+
+        return Double((UInt32(randSeed[3]) >> UInt32(0))) / Double(divisor)
     }
 
     private func createColor() -> Color {
-        let h = Double(rand())
+        let h = Double(rand() * 360)
         let s = Double(((rand() * 60) + 40)) / Double(100)
         let l = Double((rand() + rand() + rand() + rand()) * 25) / Double(100)
 
-        return HSL(hue: CGFloat(h), saturation: CGFloat(s), lightness: CGFloat(l)).toDynamicColor()
+        return Color(h: h, s: s, l: l) ?? Color.black
     }
 
     private func createImageData() -> [Double] {
@@ -100,7 +104,7 @@ public final class Blockies {
 
         var data: [Double] = []
         for _ in 0 ..< height {
-            var row: [Double] = []
+            var row = [Double](repeating: 0, count: dataWidth)
             for x in 0 ..< dataWidth {
                 // this makes foreground and background color to have a 43% (1/2.3) probability
                 // spot color has 13% chance
@@ -117,11 +121,14 @@ public final class Blockies {
         return data
     }
 
-    private func image(data: [Double]) -> Image? {
-        UIGraphicsBeginImageContext(CGSize(width: size, height: size))
+    private func image(data: [Double], customScale: Int) -> Image? {
+        UIGraphicsBeginImageContext(CGSize(width: size * scale * customScale, height: size * scale * customScale))
         let context = UIGraphicsGetCurrentContext()
 
         let width = Int(sqrt(Double(data.count)))
+
+        context?.setFillColor(bgColor.cgColor)
+        context?.fill(CGRect(x: 0, y: 0, width: size * scale, height: size * scale))
 
         for i in 0 ..< data.count {
             let row = Int(floor(Double(i) / Double(width)))
@@ -141,7 +148,7 @@ public final class Blockies {
             }
 
             context?.setFillColor(uiColor.cgColor)
-            context?.fill(CGRect(x: CGFloat(col * scale), y: CGFloat(row * scale), width: CGFloat(scale), height: CGFloat(scale)))
+            context?.fill(CGRect(x: CGFloat(col * scale * customScale), y: CGFloat(row * scale * customScale), width: CGFloat(scale * customScale), height: CGFloat(scale * customScale)))
         }
 
         let output = UIGraphicsGetImageFromCurrentImageContext()
@@ -154,19 +161,21 @@ public final class Blockies {
 
 class BlockiesHelper {
 
-    static func createRandSeed(seed: String) -> [Int] {
+    static func createRandSeed(seed: String) -> [UInt32] {
         var randSeed = [Int](repeating: 0, count: 4)
         for i in 0 ..< seed.count {
             randSeed[i % 4] = ((randSeed[i % 4] << 5) - randSeed[i % 4])
             let index = seed.index(seed.startIndex, offsetBy: i)
-            randSeed[i % 4] += seed[index].asciiValue
+            randSeed[i % 4] = randSeed[i % 4] + seed[index].asciiValue
         }
 
-        return randSeed
-    }
+        var convertedRandSeed = [UInt32](repeating: 0, count: 4)
+        for i in 0 ..< randSeed.count {
+            let n = UInt32(randSeed[i] & 0x00000000FFFFFFFF)
+            convertedRandSeed[i] = n
+        }
 
-    static func createColor(randSeed: [Int]) {
-        let randSeed = randSeed.count == 4 ? randSeed : [Int](repeating: 0, count: 4)
+        return convertedRandSeed
     }
 }
 
