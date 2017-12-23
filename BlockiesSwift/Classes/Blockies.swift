@@ -149,8 +149,11 @@ public final class Blockies {
     }
 
     private func image(data: [Double], customScale: Int) -> Image? {
-        UIGraphicsBeginImageContext(CGSize(width: size * scale * customScale, height: size * scale * customScale))
-        let context = UIGraphicsGetCurrentContext()
+        #if os(iOS) || os(tvOS) || os(watchOS)
+            UIGraphicsBeginImageContext(CGSize(width: size * scale * customScale, height: size * scale * customScale))
+            let context = UIGraphicsGetCurrentContext()
+        #elseif os(OSX)
+        #endif
 
         let width = Int(sqrt(Double(data.count)))
 
