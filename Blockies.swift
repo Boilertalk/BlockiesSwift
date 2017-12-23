@@ -36,6 +36,16 @@ public final class Blockies {
 
     // MARK: - Initialization
 
+    /**
+     * Initializes this instance of `Blockies` with the given values or default values.
+     *
+     * - parameter seed: The seed to be used for this Blockies. Defaults to random.
+     * - parameter size: The number of blocks per side for this image. Defaults to 8.
+     * - parameter scale: The number of pixels per block. Defaults to 4.
+     * - parameter color: The foreground color. Defaults to random.
+     * - parameter bgColor: The background color. Defaults to random.
+     * - parameter spotColor: A color which forms mouths and eyes. Defaults to random.
+     */
     public init(
         seed: String? = nil,
         size: Int = 8,
@@ -64,6 +74,23 @@ public final class Blockies {
         }
     }
 
+    /**
+     * Creates the Blockies Image with currently set values.
+     *
+     * You can change the absolute size in pixels of the resulting image
+     * by passing a `customScale` value which will result in the total pixel size
+     * calculated as follows:
+     *
+     * `size * scale * customScale`
+     *
+     * For example: Default values `size = 8` and `scale = 4` result in an image
+     * with 32x32px size. If you provide a `customScale` of `10`, you will get
+     * an image with 320x320px in size.
+     *
+     * - parameter customScale: A scale factor which will be used to calculate the total image size.
+     *
+     * - returns: The generated image or `nil` if something went wrong.
+     */
     public func createImage(customScale: Int = 1) -> Image? {
         let imageData = createImageData()
 
@@ -161,26 +188,33 @@ public final class Blockies {
 
 class BlockiesHelper {
 
+    /**
+     * Creates the initial version of the 4 UInt32 array for the given seed.
+     * The result is equal for equal seeds.
+     *
+     * - parameter seed: The seed.
+     *
+     * - returns: The UInt32 array with exactly 4 values stored in it.
+     */
     static func createRandSeed(seed: String) -> [UInt32] {
-        var randSeed = [Int](repeating: 0, count: 4)
+        var randSeed = [UInt32](repeating: 0, count: 4)
         for i in 0 ..< seed.count {
-            randSeed[i % 4] = ((randSeed[i % 4] << 5) - randSeed[i % 4])
+            // &* and &- are the "overflow" operators. Need to be used there.
+            // There is no overflow left shift operator so we do "&* pow(2, 5)" instead of "<< 5"
+            randSeed[i % 4] = ((randSeed[i % 4] &* (2 << 4)) &- randSeed[i % 4])
             let index = seed.index(seed.startIndex, offsetBy: i)
-            randSeed[i % 4] = randSeed[i % 4] + seed[index].asciiValue
+            randSeed[i % 4] = randSeed[i % 4] &+ seed[index].asciiValue
         }
 
-        var convertedRandSeed = [UInt32](repeating: 0, count: 4)
-        for i in 0 ..< randSeed.count {
-            let n = UInt32(randSeed[i] & 0x00000000FFFFFFFF)
-            convertedRandSeed[i] = n
-        }
-
-        return convertedRandSeed
+        return randSeed
     }
 }
 
 extension Double {
 
+    /**
+     * Generates a random number between 0 and 1 with `arc4random()`.
+     */
     static var random: Double {
         return Double(arc4random()) / 0xFFFFFFFF
     }
@@ -188,10 +222,15 @@ extension Double {
 
 extension Character {
 
-    var asciiValue: Int {
+    /**
+     * Returns the value of the first 8 bits of this unicode character.
+     * This is a correct ascii representation of this character if it is
+     * an ascii character.
+     */
+    var asciiValue: UInt32 {
         get {
             let s = String(self).unicodeScalars
-            return Int(s[s.startIndex].value)
+            return s[s.startIndex].value
         }
     }
 }
