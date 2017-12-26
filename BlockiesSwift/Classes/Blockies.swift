@@ -149,16 +149,24 @@ public final class Blockies {
     }
 
     private func image(data: [Double], customScale: Int) -> Image? {
+        let finalSize = size * scale * customScale
         #if os(iOS) || os(tvOS) || os(watchOS)
-            UIGraphicsBeginImageContext(CGSize(width: size * scale * customScale, height: size * scale * customScale))
-            let context = UIGraphicsGetCurrentContext()
+            UIGraphicsBeginImageContext(CGSize(width: finalSize, height: finalSize))
+            let nilContext = UIGraphicsGetCurrentContext()
         #elseif os(OSX)
+            let colorSpace = CGColorSpaceCreateDeviceRGB()
+            let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.premultipliedLast.rawValue)
+            let nilContext = CGBitmapContextCreate(nil, finalSize, finalSize, 8, 0, colorSpace, bitmapInfo)
         #endif
+
+        guard let context = nilContext else {
+            return nil
+        }
 
         let width = Int(sqrt(Double(data.count)))
 
-        context?.setFillColor(bgColor.cgColor)
-        context?.fill(CGRect(x: 0, y: 0, width: size * scale, height: size * scale))
+        context.setFillColor(bgColor.cgColor)
+        context.fill(CGRect(x: 0, y: 0, width: size * scale, height: size * scale))
 
         for i in 0 ..< data.count {
             let row = Int(floor(Double(i) / Double(width)))
@@ -177,15 +185,20 @@ public final class Blockies {
                 uiColor = UIColor.black
             }
 
-            context?.setFillColor(uiColor.cgColor)
-            context?.fill(CGRect(x: CGFloat(col * scale * customScale), y: CGFloat(row * scale * customScale), width: CGFloat(scale * customScale), height: CGFloat(scale * customScale)))
+            context.setFillColor(uiColor.cgColor)
+            context.fill(CGRect(x: CGFloat(col * scale * customScale), y: CGFloat(row * scale * customScale), width: CGFloat(scale * customScale), height: CGFloat(scale * customScale)))
         }
 
-        let output = UIGraphicsGetImageFromCurrentImageContext()
+        #if os(iOS) || os(tvOS) || os(watchOS)
+            let output = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
 
-        UIGraphicsEndImageContext()
+            return output
+        #elseif os(OSX)
+            let output = CGBitmapContextCreateImage(context)
 
-        return output
+            return NSImage(CGImage: output, size: finalSize)
+        #endif
     }
 }
 
