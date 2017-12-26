@@ -66,6 +66,8 @@ let img = blockies.createImage()
 yourImageView.image = img
 ```
 
+This will generate an image with `size` set to 8 and scale `scale` set to 4.
+
 ## Author
 
 Koray Koska, koray@koska.at
