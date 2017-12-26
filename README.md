@@ -1,6 +1,6 @@
 # BlockiesSwift
 
-[![CI Status](http://img.shields.io/travis/Koray Koska/BlockiesSwift.svg?style=flat)](https://travis-ci.org/Koray Koska/BlockiesSwift)
+[![CI Status](http://img.shields.io/travis/Boilertalk/BlockiesSwift.svg?style=flat)](https://travis-ci.org/Boilertalk/BlockiesSwift)
 [![Version](https://img.shields.io/cocoapods/v/BlockiesSwift.svg?style=flat)](http://cocoapods.org/pods/BlockiesSwift)
 [![License](https://img.shields.io/cocoapods/l/BlockiesSwift.svg?style=flat)](http://cocoapods.org/pods/BlockiesSwift)
 [![Platform](https://img.shields.io/cocoapods/p/BlockiesSwift.svg?style=flat)](http://cocoapods.org/pods/BlockiesSwift)
