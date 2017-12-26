@@ -155,7 +155,7 @@ public final class Blockies {
             let nilContext = UIGraphicsGetCurrentContext()
         #elseif os(OSX)
             let colorSpace = CGColorSpaceCreateDeviceRGB()
-            let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.premultipliedLast.rawValue)
+            let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
             let nilContext = CGBitmapContextCreate(nil, finalSize, finalSize, 8, 0, colorSpace, bitmapInfo)
         #endif
 
@@ -174,7 +174,7 @@ public final class Blockies {
 
             let number = data[i]
 
-            let uiColor: UIColor
+            let uiColor: Color
             if number == 0 {
                 uiColor = bgColor
             } else if number == 1 {
@@ -182,7 +182,7 @@ public final class Blockies {
             } else if number == 2 {
                 uiColor = spotColor
             } else {
-                uiColor = UIColor.black
+                uiColor = Color.black
             }
 
             context.setFillColor(uiColor.cgColor)
