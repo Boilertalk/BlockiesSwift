@@ -53,6 +53,19 @@ BlockiesSwift is compatible with [Carthage](https://github.com/Carthage/Carthage
 github "Boilertalk/BlockiesSwift"
 ```
 
+## Usage
+
+Basic usage is very straight forward. You just create an instance of `Blockies` with your seed and call `createImage()` to get your image.
+
+```Swift
+import BlockiesSwift
+
+let blockies = Blockies(seed: "0x869bb8979d38a8bc07b619f9d6a0756199e2c724")
+let img = blockies.createImage()
+
+yourImageView.image = img
+```
+
 ## Author
 
 Koray Koska, koray@koska.at
