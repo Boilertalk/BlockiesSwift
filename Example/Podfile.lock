@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  BlockiesSwift: f97543a0d0f5cff8992f4771a3f25e676a54a0b9
+  BlockiesSwift: 68bcf8bd11b9b89494fcab077e8a039bdf55d072
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 

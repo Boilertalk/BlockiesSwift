@@ -1,9 +1,9 @@
 {
   "name": "BlockiesSwift",
   "version": "0.1.0",
-  "summary": "A short description of BlockiesSwift.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Koray Koska/BlockiesSwift",
+  "summary": "Generate unique Blockies images for wallets",
+  "description": "Blockies is a library which generates unique images for a given seed string.\nThis can be used to create images to represent Bitcoin, Ethereum and other Cryptocurrency wallets.\nThis is an exact implementation as the one the Mist Wallet uses.",
+  "homepage": "https://github.com/Boilertalk/BlockiesSwift",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,14 @@
     "Koray Koska": "koray@koska.at"
   },
   "source": {
-    "git": "https://github.com/Koray Koska/BlockiesSwift.git",
+    "git": "https://github.com/Boilertalk/BlockiesSwift.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "osx": "10.10",
+    "tvos": "9.0",
+    "watchos": "2.0"
   },
   "source_files": "BlockiesSwift/Classes/**/*"
 }
