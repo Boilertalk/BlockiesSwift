@@ -32,13 +32,13 @@
 
 /* Begin PBXFileReference section */
 		01F115F0B8104E3C3A9B5849B2086FD6 /* Pods-BlockiesSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockiesSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
-		03036A2AB9476260515ACE4DE855BEB6 /* Pods_BlockiesSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlockiesSwift_Example.framework; path = "Pods-BlockiesSwift_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03036A2AB9476260515ACE4DE855BEB6 /* Pods_BlockiesSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockiesSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1620BADA4337907DA860B675DAAC2715 /* BlockiesSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BlockiesSwift-dummy.m"; sourceTree = "<group>"; };
-		16D4F8A32AA35473206D12132C8C033C /* BlockiesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BlockiesSwift.framework; path = BlockiesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16D4F8A32AA35473206D12132C8C033C /* BlockiesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockiesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26BADA62975F940A9C6F3567056339 /* Pods-BlockiesSwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlockiesSwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2D14B256CD902F740EDCF8828EDF5E0D /* BlockiesSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlockiesSwift-umbrella.h"; sourceTree = "<group>"; };
-		2D1BE2E1C72BA0FBA227DEAC94844E67 /* Pods_BlockiesSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlockiesSwift_Tests.framework; path = "Pods-BlockiesSwift_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D449D1C08D6DFA54EC288F65C0B4F49 /* BlockiesSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BlockiesSwift.modulemap; sourceTree = "<group>"; };
+		2D1BE2E1C72BA0FBA227DEAC94844E67 /* Pods_BlockiesSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockiesSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D449D1C08D6DFA54EC288F65C0B4F49 /* BlockiesSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BlockiesSwift.modulemap; sourceTree = "<group>"; };
 		3B621A75EE5D4F6C13D1BF169C6A641A /* Pods-BlockiesSwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockiesSwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3DB0F392C50E4E1230AF5C2AA6F854D6 /* Pods-BlockiesSwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlockiesSwift_Example-dummy.m"; sourceTree = "<group>"; };
 		44D3FA8215B857A0F9C13D275FFFE880 /* Pods-BlockiesSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockiesSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -48,14 +48,14 @@
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66C44592EC1C285B5FE742ECE5758767 /* Pods-BlockiesSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlockiesSwift_Example-umbrella.h"; sourceTree = "<group>"; };
 		6AD72DA4D9498389D2A865898891C79D /* Pods-BlockiesSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockiesSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8250F13B5879D407C802E15BE7142C0C /* Pods-BlockiesSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlockiesSwift_Tests.modulemap"; sourceTree = "<group>"; };
+		8250F13B5879D407C802E15BE7142C0C /* Pods-BlockiesSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlockiesSwift_Tests.modulemap"; sourceTree = "<group>"; };
 		8D399D9ADAA01C175E49904715919771 /* BlockiesSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BlockiesSwift.xcconfig; sourceTree = "<group>"; };
 		8F5CA74707072D73EAF5A393A696C886 /* Color+HSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+HSL.swift"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93E6B46C12D6EBC1887FB81B9AEC4C4D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958CC65C4F7F0A114337B4BA929CCEF6 /* Pods-BlockiesSwift_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockiesSwift_Tests-resources.sh"; sourceTree = "<group>"; };
 		9722E2800D02140B707D69FFF4071AF1 /* Pods-BlockiesSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockiesSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A8253F86D3818E6B91104B1B8961E2ED /* Pods-BlockiesSwift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlockiesSwift_Example.modulemap"; sourceTree = "<group>"; };
+		A8253F86D3818E6B91104B1B8961E2ED /* Pods-BlockiesSwift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlockiesSwift_Example.modulemap"; sourceTree = "<group>"; };
 		AFD4F96937D18FCF5EE345D4B31AF007 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1C4F833F70237E971EFC39FFDF67E96 /* Pods-BlockiesSwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlockiesSwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C261FA01754E5E1D1FB7F48225450643 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -383,7 +383,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlockiesSwift_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlockiesSwift_Tests/Pods-BlockiesSwift_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -476,7 +476,7 @@
 				INFOPLIST_FILE = "Target Support Files/BlockiesSwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				MODULEMAP_FILE = "Target Support Files/BlockiesSwift/BlockiesSwift.modulemap";
 				PRODUCT_NAME = BlockiesSwift;
 				SDKROOT = iphoneos;
@@ -507,7 +507,7 @@
 				INFOPLIST_FILE = "Target Support Files/BlockiesSwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				MODULEMAP_FILE = "Target Support Files/BlockiesSwift/BlockiesSwift.modulemap";
 				PRODUCT_NAME = BlockiesSwift;
 				SDKROOT = iphoneos;
@@ -538,7 +538,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlockiesSwift_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlockiesSwift_Tests/Pods-BlockiesSwift_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -626,7 +626,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlockiesSwift_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlockiesSwift_Example/Pods-BlockiesSwift_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -660,7 +660,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlockiesSwift_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlockiesSwift_Example/Pods-BlockiesSwift_Example.modulemap";
 				OTHER_LDFLAGS = "";
