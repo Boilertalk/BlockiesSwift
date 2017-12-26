@@ -156,7 +156,7 @@ public final class Blockies {
         #elseif os(OSX)
             let colorSpace = CGColorSpaceCreateDeviceRGB()
             let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
-            let nilContext = CGBitmapContextCreate(nil, finalSize, finalSize, 8, 0, colorSpace, bitmapInfo)
+            let nilContext = CGContext(data: nil, width: finalSize, height: finalSize, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
         #endif
 
         guard let context = nilContext else {
@@ -195,9 +195,11 @@ public final class Blockies {
 
             return output
         #elseif os(OSX)
-            let output = CGBitmapContextCreateImage(context)
+            guard let output = context.makeImage() else {
+                return nil
+            }
 
-            return NSImage(CGImage: output, size: finalSize)
+            return NSImage(cgImage: output, size: CGSize(width: finalSize, height: finalSize))
         #endif
     }
 }
