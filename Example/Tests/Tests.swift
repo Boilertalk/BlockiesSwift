@@ -1,51 +1,39 @@
 // https://github.com/Quick/Quick
 
-import Quick
-import Nimble
-import BlockiesSwift
+@testable import BlockiesSwift
+import XCTest
 
-class TableOfContentsSpec: QuickSpec {
-    override func spec() {
-        describe("these will succeed") {
+class BlockiesTests: XCTestCase {
 
-            it("can do quick maths") {
-                expect(2 + 2) == 4
-                expect(2 + 2 - 1) == 3
-            }
+    var blockies: Blockies!
+    var blockiesRandColor: Blockies!
 
-            it("can read") {
-                expect("man's not hot") != "never hot"
-            }
+    override func setUp() {
+        blockies = Blockies(seed: "abcd", size: 8, scale: 4, color: UIColor.gray, bgColor: UIColor.green, spotColor: UIColor.blue)
+        blockiesRandColor = Blockies(seed: "abcd", size: 4, scale: 10)
+    }
 
-            it("will eventually succeed") {
-                expect("time").toEventually(equal("time"))
-            }
-            
-            context("these will pass") {
+    func testSize() throws {
+        let bImage = blockies.createImage()
+        XCTAssert(bImage?.size.width == 32)
+        XCTAssert(bImage?.size.width == 32)
 
-                it("can do maths") {
-                    expect(23) == 23
-                }
+        let doubleImage = blockies.createImage(customScale: 2)
+        XCTAssert(doubleImage?.size.width == 64)
+        XCTAssert(doubleImage?.size.width == 64)
 
-                it("can read") {
-                    expect("🐮") == "🐮"
-                }
+        let bCImage = blockiesRandColor.createImage()
+        XCTAssert(bCImage?.size.width == 40)
+        XCTAssert(bCImage?.size.width == 40)
 
-                it("will eventually pass") {
-                    var time = "passing"
+        let bcTripleImage = blockiesRandColor.createImage(customScale: 3)
+        XCTAssert(bcTripleImage?.size.width == 120)
+        XCTAssert(bcTripleImage?.size.width == 120)
+    }
 
-                    DispatchQueue.main.async {
-                        time = "done"
-                    }
-
-                    waitUntil { done in
-                        Thread.sleep(forTimeInterval: 0.5)
-                        expect(time) == "done"
-
-                        done()
-                    }
-                }
-            }
-        }
+    func testColor() throws {
+        XCTAssertEqual(blockies.color, UIColor.gray, "Blockies color wrong")
+        XCTAssertEqual(blockies.bgColor, UIColor.green, "Blockies bgColor wrong")
+        XCTAssertEqual(blockies.spotColor, UIColor.blue, "Blockies spotColor wrong")
     }
 }

@@ -6,7 +6,7 @@ target 'BlockiesSwift_Example' do
   target 'BlockiesSwift_Tests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.2'
-    pod 'Nimble', '~> 7.0'
+    # pod 'Quick', '~> 1.2'
+    # pod 'Nimble', '~> 7.0'
   end
 end

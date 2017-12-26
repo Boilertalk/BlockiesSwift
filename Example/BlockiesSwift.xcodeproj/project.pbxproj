@@ -31,7 +31,7 @@
 		03EB1F0093B70F87A6D77183 /* Pods_BlockiesSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockiesSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		141707E40CA93D1A87AC3022 /* Pods-BlockiesSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockiesSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockiesSwift_Example/Pods-BlockiesSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3A628E0A0BBB433B1DF3671A /* Pods-BlockiesSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockiesSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockiesSwift_Tests/Pods-BlockiesSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		45EF8CF6495E71B3EC2C9022 /* BlockiesSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = BlockiesSwift.podspec; path = ../BlockiesSwift.podspec; sourceTree = "<group>"; };
+		45EF8CF6495E71B3EC2C9022 /* BlockiesSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BlockiesSwift.podspec; path = ../BlockiesSwift.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BlockiesSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockiesSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +43,9 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		C3D0ECE95ADB847C78430E41 /* Pods-BlockiesSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockiesSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockiesSwift_Example/Pods-BlockiesSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D35F555C67F6055C2131ADDC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D35F555C67F6055C2131ADDC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DDE2A55B1A957E4F1D44CF6F /* Pods-BlockiesSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockiesSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockiesSwift_Tests/Pods-BlockiesSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F6188EFA50FA1594B1DE072F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F6188EFA50FA1594B1DE072F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F8B7E3A95FC77E554653AB54 /* Pods_BlockiesSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockiesSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -560,7 +560,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -577,7 +577,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
