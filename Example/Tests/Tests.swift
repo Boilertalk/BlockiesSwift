@@ -6,18 +6,19 @@ import BlockiesSwift
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
-        describe("these will fail") {
+        describe("these will succeed") {
 
-            it("can do maths") {
-                expect(1) == 2
+            it("can do quick maths") {
+                expect(2 + 2) == 4
+                expect(2 + 2 - 1) == 3
             }
 
             it("can read") {
-                expect("number") == "string"
+                expect("man's not hot") != "never hot"
             }
 
-            it("will eventually fail") {
-                expect("time").toEventually( equal("done") )
+            it("will eventually succeed") {
+                expect("time").toEventually(equal("time"))
             }
             
             context("these will pass") {
