@@ -11,5 +11,7 @@ before_install:
   - gem install cocoapods # Since Travis is not always on latest version
   - pod install --project-directory=Example
 script:
-  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/BlockiesSwift.xcworkspace -scheme BlockiesSwift-Example -sdk iphonesimulator11.2 -destination 'platform=iOS Simulator,name=iPhone SE,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
+  - set -o pipefail
+  - xcodebuild clean build build-for-testing -workspace Example/BlockiesSwift.xcworkspace -scheme BlockiesSwift-Example -sdk iphonesimulator11.2 -destination 'platform=iOS Simulator,name=iPhone SE,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
+  - xcodebuild test-without-building -enableCodeCoverage YES -workspace Example/BlockiesSwift.xcworkspace -scheme BlockiesSwift-Example -sdk iphonesimulator11.2 -destination 'platform=iOS Simulator,name=iPhone SE,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
   - pod lib lint
