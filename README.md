@@ -23,7 +23,7 @@
 # :alembic: BlockiesSwift
 
 <p align="center">
-  <img src="https://github.com/Boilertalk/BlockiesSwift/blob/master/sample.png" alt="Sample Blockies">
+  <img src="https://github.com/Boilertalk/BlockiesSwift/raw/master/sample.png" alt="Sample Blockies">
 </p>
 
 This library is a Swift implementation of the [Ethereum fork of Blockies](https://github.com/ethereum/blockies) which is intended to be used in iOS, watchOS, tvOS and macOS apps.
