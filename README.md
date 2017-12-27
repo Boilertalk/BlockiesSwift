@@ -66,7 +66,7 @@ let img = blockies.createImage()
 yourImageView.image = img
 ```
 
-This will generate an image with `size` set to 8 and scale `scale` set to 4. `size` is the width and height of the Blockies image in blocks, `scale` is the width and height of one block in pixels.
+This will generate an image with `size` set to 8 and `scale` set to 4. `size` is the width and height of the Blockies image in blocks, `scale` is the width and height of one block in pixels.
 
 Per default, random colors are generated for the given seed. You can change that but keep in mind that the pattern will also change if you provide custom colors as there will be less calls to the internal `random()` function.
 
@@ -108,7 +108,7 @@ let img = blockies.createImage(customScale: 10)
 yourImageView.image = img
 ```
 
-The image in this example without a custom scale would be `8 * 3 = 24x24` pixels. With the customScale of `10` it will be `8 * 3 * 10 = 240x240` pixels. The `customScale` lets you generate bigger images with the same structure quality as the smaller ones.
+The image in this example would be `8 * 3 = 24x24` pixels without a custom scale. With the `customScale` set to `10` it will be `8 * 3 * 10 = 240x240` pixels. The `customScale` lets you generate bigger images with the same structure quality as the smaller ones.
 
 ## Author
 
