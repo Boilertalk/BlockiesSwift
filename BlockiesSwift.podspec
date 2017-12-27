@@ -36,7 +36,7 @@ This is an exact implementation as the one the Mist Wallet uses.
   s.watchos.deployment_target = '2.0'
 
   s.source_files = 'BlockiesSwift/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'BlockiesSwift' => ['BlockiesSwift/Assets/*.png']
   # }
@@ -44,4 +44,9 @@ This is an exact implementation as the one the Mist Wallet uses.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  # s.test_spec 'Tests' do |test_spec|
+  #   test_spec.source_files = 'Example/Tests/*.{h,m,swift}'
+  #   # test_spec.dependency 'OCMock' # This dependency will only be linked with your tests.
+  # end
 end
