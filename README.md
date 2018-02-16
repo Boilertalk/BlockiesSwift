@@ -1,4 +1,4 @@
-<a href="https://github.com/Boilertalk/VaporFacebookBot">
+<a href="https://github.com/Boilertalk/BlockiesSwift">
   <img src="https://storage.googleapis.com/boilertalk/logo.svg" width="100%" height="256">
 </a>
 
