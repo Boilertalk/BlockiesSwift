@@ -112,7 +112,7 @@ The image in this example would be `8 * 3 = 24x24` pixels without a custom scale
 
 ## Author
 
-Koray Koska, koray@koska.at
+Koray Koska, koray@boilertalk.com
 
 ## License
 
